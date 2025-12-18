@@ -11,8 +11,6 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View did load")
         view.backgroundColor = .red
     }
 }
-
