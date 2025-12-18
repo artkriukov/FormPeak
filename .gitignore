@@ -25,6 +25,7 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 fastlane/build
 
+build/
 .bundle/
 
 *.DS_Store
