@@ -64,7 +64,7 @@ Press `Cmd+R`.
 - XcodeGen project generation
 - SwiftLint integration
 - R.swift for type-safe resources
-
+- Dynamic Type support with semantic typography tokens
 
 ## Docs
 

@@ -60,6 +60,7 @@ targets:
       - name: SwiftLint
         runOnlyWhenInstalling: false
         script: |
+          export ENABLE_USER_SCRIPT_SANDBOXING=NO
           export PATH="/opt/homebrew/bin:$PATH"
           echo "Current PATH: $PATH"
           if which swiftlint >/dev/null; then
