@@ -17,6 +17,14 @@ final class PickerRow: UIControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.12, delay: 0, options: [.beginFromCurrentState, .allowUserInteraction]) {
+                self.alpha = self.isHighlighted ? 0.7 : 1.0
+            }
+        }
+    }
+    
     private func setupPickerRow(with config: Configuration) {
         self.backgroundColor = config.backgroundColor
         self.tintColor = config.textColor
@@ -79,10 +87,10 @@ final class PickerRow: UIControl {
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-            
-            heightAnchor.constraint(equalToConstant: Layout.rowHeight)
+            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
+        
+        [mainStackView, infoStackView, iconView, title, chevron].forEach { $0.isUserInteractionEnabled = false }
     }
 }
 

@@ -7,6 +7,14 @@ final class PrimaryButton: UIButton {
         makeButton(with: config)
     }
 
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.12, delay: 0, options: [.beginFromCurrentState, .allowUserInteraction]) {
+                self.alpha = self.isHighlighted ? 0.7 : 1.0
+            }
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("PrimaryButton has not been implemented")
     }
