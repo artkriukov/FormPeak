@@ -1,7 +1,3 @@
-//
-//  ButtonFactory.swift
-//
-
 import UIKit
 
 enum ButtonFactory {
@@ -22,4 +18,22 @@ enum ButtonFactory {
         return PrimaryButton(with: config)
     }
     
+    static func pickerRow(
+        title: String,
+        // TODO: после добавления иконок поменять дефолтное изображение
+        icon: UIImage? = UIImage(systemName: "poweroutlet.type.b.fill") ?? nil,
+        backgroundColor: UIColor = AppColor.surface,
+        textColor: UIColor = AppColor.textSecondary,
+        action: @escaping () -> Void
+    ) -> PickerRow {
+        let config = PickerRow.Configuration(
+            title: title,
+            icon: icon,
+            backgroundColor: backgroundColor,
+            textColor: textColor,
+            action: action
+        )
+        
+        return PickerRow(with: config)
+    }
 }
