@@ -1,7 +1,3 @@
-//
-//  PrimaryButton.swift
-//
-
 import UIKit
 
 final class PrimaryButton: UIButton {

@@ -1,7 +1,3 @@
-//
-//  Typography.swift
-//
-
 import UIKit
 
 /// adjustsFontForContentSizeCategory = true
