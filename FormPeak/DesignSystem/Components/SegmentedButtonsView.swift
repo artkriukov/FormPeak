@@ -32,7 +32,7 @@ final class SegmentedButtonsView<Item: SegmentedItem>: UIView {
     private func setupTitle(with config: Configuration) {
         sectionTitle.text = config.title
         sectionTitle.textColor = AppColor.textPrimary
-        sectionTitle.font = Typography.body
+        sectionTitle.font = Typography.sectionHeader
         sectionTitle.adjustsFontForContentSizeCategory = true
         sectionTitle.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -56,7 +56,7 @@ final class SegmentedButtonsView<Item: SegmentedItem>: UIView {
             
             button.addAction(UIAction { [weak self] _ in
                 guard let self else { return }
-                print(index)
+                print(item)
                 self.selectedButton = item
                 switchButtonBackground()
             }, for: .touchUpInside)
@@ -72,6 +72,10 @@ final class SegmentedButtonsView<Item: SegmentedItem>: UIView {
         for (index, item) in Item.allCases.enumerated() {
             let button = segmentedButtons[index]
             button.backgroundColor = ( item == selectedButton ) ? AppColor.primary : AppColor.surface
+            button.setTitleColor(( item == selectedButton ) ?
+                                    AppColor.textOnPrimary :
+                                    AppColor.textPrimary,
+                                 for: .normal)
         }
     }
     

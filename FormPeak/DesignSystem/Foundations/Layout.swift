@@ -6,6 +6,7 @@ struct Layout {
     static let spaceS: CGFloat = 8
     static let spaceM: CGFloat = 16
     static let spaceL: CGFloat = 24
+    static let spaceXL: CGFloat = 32
     
     // MARK: - Corner Radius
     static let cornerSmall: CGFloat = 8

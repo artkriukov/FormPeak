@@ -32,7 +32,7 @@ final class InputField: UIView {
     private func setupTitle(with config: Configuration) {
         inputTitleLabel.text = config.title
         inputTitleLabel.textColor = AppColor.textPrimary
-        inputTitleLabel.font = Typography.body
+        inputTitleLabel.font = Typography.sectionHeader
     }
     
     private func setupTextField(with config: Configuration) {
@@ -40,6 +40,15 @@ final class InputField: UIView {
         textField.keyboardType = config.keyboardType
         textField.layer.cornerRadius = Layout.cornerMedium
         textField.backgroundColor = AppColor.surface
+        textField.font = Typography.bodySecondary
+        textField.attributedPlaceholder = NSAttributedString(
+            string: config.placeholder,
+            attributes: [
+                .font: Typography.inputPlaceholder,
+                .foregroundColor: AppColor.textSecondary
+            ]
+        )
+        
         textField.leftView = makeLeftIconView(config.icon)
         textField.leftViewMode = config.icon == nil ? .never : .always
     }

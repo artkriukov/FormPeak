@@ -2,10 +2,10 @@ import UIKit
 
 enum InputFieldFactory {
     static func makeInputField(
-        with title: String?,
+        title: String?,
         placeholder: String,
         icon: UIImage?,
-        keyboardType: UIKeyboardType = .default
+        keyboardType: UIKeyboardType = .decimalPad
     ) -> InputField {
         let config = InputField.Configuration(
             title: title,

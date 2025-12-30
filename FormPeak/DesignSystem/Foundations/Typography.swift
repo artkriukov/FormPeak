@@ -28,7 +28,7 @@ enum Typography {
 
     // MARK: - Inputs & Nav
     static let input: UIFont = .preferredFont(forTextStyle: .body)
-    static let inputPlaceholder: UIFont = .preferredFont(forTextStyle: .body)
+    static let inputPlaceholder: UIFont = .preferredFont(forTextStyle: .subheadline)
     static let navBarTitle: UIFont = .preferredFont(forTextStyle: .headline)
     static let chip: UIFont = .preferredFont(forTextStyle: .subheadline)
 }
