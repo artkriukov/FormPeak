@@ -21,7 +21,7 @@ final class PrimaryButton: UIButton {
     
     private func makeButton(with config: Configuration) {
         self.setTitle(config.title, for: .normal)
-        self.tintColor = config.textColor
+        self.setTitleColor(config.textColor, for: .normal)
         self.backgroundColor = config.backgroundColor
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = Layout.cornerMedium

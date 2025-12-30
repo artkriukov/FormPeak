@@ -14,7 +14,7 @@ final class PickerRow: UIControl {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("PickerRow has not been implemented")
     }
     
     override var isHighlighted: Bool {
