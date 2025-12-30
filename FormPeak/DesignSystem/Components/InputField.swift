@@ -7,6 +7,8 @@ final class InputField: UIView {
     private lazy var textField = InsetTextField()
     private lazy var textFieldIcon = UIImageView()
     
+    var uiTextField: UITextField { textField }
+    
     init(with config: Configuration) {
         super.init(frame: .zero)
         setupInputField(with: config)
@@ -41,6 +43,7 @@ final class InputField: UIView {
         textField.layer.cornerRadius = Layout.cornerMedium
         textField.backgroundColor = AppColor.surface
         textField.font = Typography.bodySecondary
+        textField.returnKeyType = .done
         textField.attributedPlaceholder = NSAttributedString(
             string: config.placeholder,
             attributes: [

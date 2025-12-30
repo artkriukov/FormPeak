@@ -21,13 +21,13 @@ final class ResultEntryViewController: UIViewController {
     private lazy var weightInputField = InputFieldFactory.makeInputField(
         title: "Вес, кг",
         placeholder: "Рекорд",
-        icon: UIImage(systemName: "scalemass.fill")
+        icon: Icons.weight
     )
     
     private lazy var repsInputField = InputFieldFactory.makeInputField(
         title: "Повторы",
         placeholder: "Кол-во повторов",
-        icon: UIImage(systemName: "repeat")
+        icon: Icons.repeatIcon
     )
     
     private lazy var segmentsStackView = StackViewFactory.makeStackView()
@@ -58,7 +58,7 @@ final class ResultEntryViewController: UIViewController {
     // MARK: - Life Circle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        hideKeyboardWhenTappedAround()
         setupViews()
         setupConstraints()
     }
@@ -67,6 +67,9 @@ final class ResultEntryViewController: UIViewController {
 // MARK: - Setup Views & Setup Constraints
 private extension ResultEntryViewController {
     func setupViews() {
+        
+        commentInputField.uiTextField.delegate = self
+        
         view.backgroundColor = AppColor.background
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(exerciseSelectionButton)
@@ -99,5 +102,13 @@ private extension ResultEntryViewController {
             actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             actionButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight)
         ])
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension ResultEntryViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
 }
