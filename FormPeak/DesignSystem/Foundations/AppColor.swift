@@ -1,7 +1,3 @@
-//
-//  Colors.swift
-//  
-
 import UIKit
 
 enum AppColor {

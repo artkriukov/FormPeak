@@ -1,7 +1,3 @@
-//
-//  Layout.swift
-//  
-
 import UIKit
 
 struct Layout {
@@ -24,5 +20,5 @@ struct Layout {
     static let cardHeight: CGFloat = 72
     
     // MARK: - Insets & Padding
-    static let contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    static let contentInset = UIEdgeInsets(top: 16, left: 8, bottom: 16, right: 8)
 }

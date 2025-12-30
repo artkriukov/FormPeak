@@ -60,13 +60,12 @@ targets:
       - name: SwiftLint
         runOnlyWhenInstalling: false
         script: |
-          cd "$SRCROOT"
-          if [[ "$(uname -m)" == "arm64" ]]; then
-            export PATH="/opt/homebrew/bin:$PATH"
-          fi
-          echo "SwiftLint working dir: $(pwd)"
-          if command -v swiftlint >/dev/null 2>&1; then
-            swiftlint --config "$SRCROOT/.swiftlint.yml"
+          export ENABLE_USER_SCRIPT_SANDBOXING=NO
+          export PATH="/opt/homebrew/bin:$PATH"
+          echo "Current PATH: $PATH"
+          if which swiftlint >/dev/null; then
+              swiftlint
           else
-            echo "warning: swiftlint not found - see https://github.com/realm/SwiftLint#installation"
+              echo "SwiftLint not found! Check Homebrew installation."
+              exit 1
           fi
