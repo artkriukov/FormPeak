@@ -20,8 +20,7 @@ enum ButtonFactory {
     
     static func pickerRow(
         title: String,
-        // TODO: после добавления иконок поменять дефолтное изображение
-        icon: UIImage? = UIImage(systemName: "poweroutlet.type.b.fill") ?? nil,
+        icon: UIImage? = Icons.barbell,
         backgroundColor: UIColor = AppColor.surface,
         textColor: UIColor = AppColor.textSecondary,
         action: @escaping () -> Void

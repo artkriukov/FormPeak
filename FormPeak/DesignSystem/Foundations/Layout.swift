@@ -1,6 +1,6 @@
 import UIKit
 
-struct Layout {
+enum Layout {
     // MARK: - Spacing
     static let spaceXS: CGFloat = 4
     static let spaceS: CGFloat = 8

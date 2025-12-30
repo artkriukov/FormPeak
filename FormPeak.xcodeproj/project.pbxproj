@@ -13,6 +13,7 @@
 		3067AACDF346C56C85FB6EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F3AA08BFF2E82A817B371 /* AppDelegate.swift */; };
 		48094475A7E0CC7A31C1EE7C /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12A837EF29FB0792CBDC55 /* Layout.swift */; };
 		5BCE1A122F0414A000C659E6 /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A112F0414A000C659E6 /* StackViewFactory.swift */; };
+		5BCE1A332F04326200C659E6 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A322F04326200C659E6 /* Icons.swift */; };
 		65574F545CFD117EF051A07D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCEE135EC64ABDF00E19243 /* RswiftLibrary */; };
 		7369F1011161BFD85339FD02 /* InputFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10716AA1A233A15F8324A38 /* InputFieldFactory.swift */; };
 		81283DCBD84BD5246E3F96E2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E98750131D221A411D53A /* InputField.swift */; };
@@ -36,6 +37,7 @@
 		40F27E1C92F122DAD713AAEC /* SegmentedControlFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFactories.swift; sourceTree = "<group>"; };
 		558F3AA08BFF2E82A817B371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BCE1A112F0414A000C659E6 /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
+		5BCE1A322F04326200C659E6 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		613F82490D797E05C4F6A5E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		624356556BFE845EE4A8C862 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		6B2E98750131D221A411D53A /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5BCE1A0F2F04110100C659E6 /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
+		5BCE1A3D2F0435CC00C659E6 /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 				0D3A05A5D4B8BEC813434313 /* AppColor.swift */,
 				9F12A837EF29FB0792CBDC55 /* Layout.swift */,
 				624356556BFE845EE4A8C862 /* Typography.swift */,
+				5BCE1A322F04326200C659E6 /* Icons.swift */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";
@@ -106,6 +110,7 @@
 		647C4EB76F1DFFF15776DC94 /* FormPeak */ = {
 			isa = PBXGroup;
 			children = (
+				5BCE1A3D2F0435CC00C659E6 /* Common */,
 				5BCE1A0F2F04110100C659E6 /* Features */,
 				F1AE348CEDFE692078C011AF /* App */,
 				C9CF424BE66A73656138ABF6 /* DesignSystem */,
@@ -187,6 +192,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				5BCE1A0F2F04110100C659E6 /* Features */,
+				5BCE1A3D2F0435CC00C659E6 /* Common */,
 			);
 			name = FormPeak;
 			packageProductDependencies = (
@@ -267,6 +273,7 @@
 			files = (
 				8AE900452072C3017AE5CBE2 /* AppColor.swift in Sources */,
 				3067AACDF346C56C85FB6EC4 /* AppDelegate.swift in Sources */,
+				5BCE1A332F04326200C659E6 /* Icons.swift in Sources */,
 				D5484558A91702D5657986A0 /* AttemptEffort.swift in Sources */,
 				D66F615A11D7C69BB75D8DE2 /* AttemptType.swift in Sources */,
 				F295C310E1592DA858432D51 /* ButtonFactory.swift in Sources */,

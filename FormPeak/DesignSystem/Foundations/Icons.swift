@@ -1,8 +1,8 @@
-//
-//  Icons.swift
-//  FormPeak
-//
-//  Created by Artem Kriukov on 30.12.2025.
-//
-
 import Foundation
+
+enum Icons {
+    static let barbell = R.image.barbell()
+    static let repeatIcon = R.image.repeat()
+    static let cup = R.image.cup()
+    static let weight = R.image.weight()
+}
