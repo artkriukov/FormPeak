@@ -87,9 +87,10 @@ private extension ResultEntryViewController {
         view.addSubview(actionButton)
     }
     
-    func setupConstraints() {
+    func setupConstraints() {        
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Layout.spaceM),
             mainStackView.leadingAnchor
                 .constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
             mainStackView.trailingAnchor
@@ -99,7 +100,7 @@ private extension ResultEntryViewController {
             
             actionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
             actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Layout.spaceM),
             actionButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight)
         ])
     }
