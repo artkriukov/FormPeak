@@ -69,6 +69,7 @@ final class PickerRow: UIControl {
     
     private func setupChevron() {
         chevron.image = UIImage(systemName: "chevron.right")
+        chevron.contentMode = .scaleAspectFit
     }
     
     private func setupViews() {
@@ -84,10 +85,13 @@ final class PickerRow: UIControl {
             iconView.widthAnchor.constraint(equalToConstant: 24),
             iconView.heightAnchor.constraint(equalToConstant: 24),
             
-            mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            mainStackView.leadingAnchor
+                .constraint(equalTo: leadingAnchor, constant: Layout.spaceM),
+            mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.spaceM),
+            mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: Layout.spaceS),
+            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.spaceS),
+            chevron.widthAnchor.constraint(equalToConstant: 18),
+            chevron.heightAnchor.constraint(equalToConstant: 18)
         ])
         
         [mainStackView, infoStackView, iconView, title, chevron].forEach { $0.isUserInteractionEnabled = false }

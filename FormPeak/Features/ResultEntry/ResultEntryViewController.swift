@@ -30,6 +30,14 @@ final class ResultEntryViewController: UIViewController {
         icon: Icons.repeatIcon
     )
     
+    private lazy var calendarButton = ButtonFactory.pickerRow(
+        title: "Дата",
+        icon: Icons.calendar,
+        action: {
+            print("calendarButton")
+        }
+    )
+    
     private lazy var segmentsStackView = StackViewFactory.makeStackView()
     
     private lazy var attemptTypeSegments = SegmentedControlFactories.makeSegmentedButtonsView(
