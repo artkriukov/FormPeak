@@ -65,6 +65,8 @@ final class PickerRow: UIControl {
     
     private func setupIconView(with config: Configuration) {
         iconView.image = config.icon
+        iconView.contentMode = .scaleAspectFit
+        iconView.tintColor = config.textColor
     }
     
     private func setupChevron() {

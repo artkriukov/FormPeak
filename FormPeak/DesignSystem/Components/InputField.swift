@@ -1,42 +1,26 @@
 import UIKit
 
 final class InputField: UIView {
-    
-    private lazy var stackView = UIStackView()
-    private lazy var inputTitleLabel = UILabel()
+
     private lazy var textField = InsetTextField()
     private lazy var textFieldIcon = UIImageView()
-    
+
     var uiTextField: UITextField { textField }
-    
+
     init(with config: Configuration) {
         super.init(frame: .zero)
         setupInputField(with: config)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("InputField has not been implemented")
     }
-    
+
     private func setupInputField(with config: Configuration) {
-        setupStackView()
-        setupTitle(with: config)
         setupTextField(with: config)
         setupViews()
     }
-    
-    private func setupStackView() {
-        stackView.spacing = Layout.spaceS
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private func setupTitle(with config: Configuration) {
-        inputTitleLabel.text = config.title
-        inputTitleLabel.textColor = AppColor.textPrimary
-        inputTitleLabel.font = Typography.sectionHeader
-    }
-    
+
     private func setupTextField(with config: Configuration) {
         textField.placeholder = config.placeholder
         textField.keyboardType = config.keyboardType
@@ -51,19 +35,19 @@ final class InputField: UIView {
                 .foregroundColor: AppColor.textSecondary
             ]
         )
-        
+
         textField.leftView = makeLeftIconView(config.icon)
         textField.leftViewMode = config.icon == nil ? .never : .always
     }
-    
+
     private func makeLeftIconView(_ image: UIImage?) -> UIView? {
         guard let image else { return nil }
-        
+
         let leftPadding: CGFloat = 16
         let iconSize: CGFloat = 20
         let spacing: CGFloat = 8
         let height: CGFloat = Layout.rowHeight
-        
+
         let container = UIView(
             frame: CGRect(
                 x: 0,
@@ -72,7 +56,7 @@ final class InputField: UIView {
                 height: height
             )
         )
-        
+
         textFieldIcon.image = image
         textFieldIcon.contentMode = .scaleAspectFill
         textFieldIcon.frame = CGRect(
@@ -81,30 +65,29 @@ final class InputField: UIView {
             width: iconSize,
             height: iconSize
         )
-        
+
         container.addSubview(textFieldIcon)
-        
+
         return container
     }
-    
+
     private func setupViews() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(stackView)
-        stackView.addArrangedSubview(inputTitleLabel)
-        stackView.addArrangedSubview(textField)
-        
+        addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            textField.topAnchor.constraint(equalTo: topAnchor),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            textField.heightAnchor.constraint(equalToConstant: Layout.rowHeight)
         ])
     }
 }
 
 extension InputField {
     struct Configuration {
-        let title: String?
         let placeholder: String
         let icon: UIImage?
         let keyboardType: UIKeyboardType
@@ -119,9 +102,9 @@ private final class InsetTextField: UITextField {
     
     private func insetRect(_ bounds: CGRect) -> CGRect {
         bounds.inset(by: UIEdgeInsets(
-            top: insets.top,
+            top: insets.top - 4,
             left: insets.left + leftW,
-            bottom: insets.bottom,
+            bottom: insets.bottom - 4,
             right: insets.right + rightW
         ))
     }

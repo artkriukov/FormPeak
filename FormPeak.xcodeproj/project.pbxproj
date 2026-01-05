@@ -14,8 +14,9 @@
 		48094475A7E0CC7A31C1EE7C /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F12A837EF29FB0792CBDC55 /* Layout.swift */; };
 		5BCE1A122F0414A000C659E6 /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A112F0414A000C659E6 /* StackViewFactory.swift */; };
 		5BCE1A332F04326200C659E6 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A322F04326200C659E6 /* Icons.swift */; };
+		5BCE1A672F0BE4B600C659E6 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A662F0BE4B600C659E6 /* FormField.swift */; };
 		65574F545CFD117EF051A07D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCEE135EC64ABDF00E19243 /* RswiftLibrary */; };
-		7369F1011161BFD85339FD02 /* InputFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10716AA1A233A15F8324A38 /* InputFieldFactory.swift */; };
+		7369F1011161BFD85339FD02 /* FormFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10716AA1A233A15F8324A38 /* FormFieldFactory.swift */; };
 		81283DCBD84BD5246E3F96E2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E98750131D221A411D53A /* InputField.swift */; };
 		8AE900452072C3017AE5CBE2 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3A05A5D4B8BEC813434313 /* AppColor.swift */; };
 		8ED7F3D67B84EF4549AE675F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E704FAA0DE9C360F28A0281 /* LaunchScreen.storyboard */; };
@@ -32,12 +33,13 @@
 		0A09BE7E457D6FD2A5FE553A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3A05A5D4B8BEC813434313 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		0F784A8376C6A30D23B627A5 /* SegmentedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonsView.swift; sourceTree = "<group>"; };
-		1209808D458865E37779A14F /* FormPeak.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FormPeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1209808D458865E37779A14F /* FormPeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormPeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5D883FBE74CFF73127D704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		40F27E1C92F122DAD713AAEC /* SegmentedControlFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFactories.swift; sourceTree = "<group>"; };
 		558F3AA08BFF2E82A817B371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BCE1A112F0414A000C659E6 /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
 		5BCE1A322F04326200C659E6 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		5BCE1A662F0BE4B600C659E6 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		613F82490D797E05C4F6A5E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		624356556BFE845EE4A8C862 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		6B2E98750131D221A411D53A /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
@@ -45,7 +47,7 @@
 		9F12A837EF29FB0792CBDC55 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		C5B1636CFA1EF056E2336133 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		E2FC5D9EF756F5D4DEC64261 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
-		F10716AA1A233A15F8324A38 /* InputFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldFactory.swift; sourceTree = "<group>"; };
+		F10716AA1A233A15F8324A38 /* FormFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldFactory.swift; sourceTree = "<group>"; };
 		F6C18493BF246684A7BB0AED /* AttemptEffort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptEffort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				E2FC5D9EF756F5D4DEC64261 /* ButtonFactory.swift */,
-				F10716AA1A233A15F8324A38 /* InputFieldFactory.swift */,
+				F10716AA1A233A15F8324A38 /* FormFieldFactory.swift */,
 				40F27E1C92F122DAD713AAEC /* SegmentedControlFactories.swift */,
 				5BCE1A112F0414A000C659E6 /* StackViewFactory.swift */,
 			);
@@ -92,6 +94,7 @@
 				6D5359CDD00A50F4ED7867F9 /* PickerRow.swift */,
 				C5B1636CFA1EF056E2336133 /* PrimaryButton.swift */,
 				0F784A8376C6A30D23B627A5 /* SegmentedButtonsView.swift */,
+				5BCE1A662F0BE4B600C659E6 /* FormField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -276,9 +279,10 @@
 				5BCE1A332F04326200C659E6 /* Icons.swift in Sources */,
 				D5484558A91702D5657986A0 /* AttemptEffort.swift in Sources */,
 				D66F615A11D7C69BB75D8DE2 /* AttemptType.swift in Sources */,
+				5BCE1A672F0BE4B600C659E6 /* FormField.swift in Sources */,
 				F295C310E1592DA858432D51 /* ButtonFactory.swift in Sources */,
 				81283DCBD84BD5246E3F96E2 /* InputField.swift in Sources */,
-				7369F1011161BFD85339FD02 /* InputFieldFactory.swift in Sources */,
+				7369F1011161BFD85339FD02 /* FormFieldFactory.swift in Sources */,
 				48094475A7E0CC7A31C1EE7C /* Layout.swift in Sources */,
 				0EE2040B345306BC859A27E8 /* PickerRow.swift in Sources */,
 				A1671DCA45465470815C80BE /* PrimaryButton.swift in Sources */,
@@ -316,6 +320,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B6X45355LQ;
 				INFOPLIST_FILE = FormPeak/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B6X45355LQ;
 				INFOPLIST_FILE = FormPeak/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

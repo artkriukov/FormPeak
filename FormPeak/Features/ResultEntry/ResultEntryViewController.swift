@@ -5,34 +5,34 @@ final class ResultEntryViewController: UIViewController {
     // MARK: - UI
     private lazy var mainStackView = StackViewFactory.makeStackView()
     
-    private lazy var exerciseSelectionButton = ButtonFactory.pickerRow(
-        title: "Становая тяга",
+    private lazy var exerciseSelectionButton = FormFieldFactory.picker(
+        title: "Упражнение",
+        valueTitle: "Становая тяга",
         action: {
             print("exerciseSelectionButton")
         }
     )
-    
     private lazy var exerciseDataStackView = StackViewFactory.makeStackView(
         axis: .horizontal,
         spacing: Layout.spaceS,
         distribution: .fillEqually
     )
     
-    private lazy var weightInputField = InputFieldFactory.makeInputField(
+    private lazy var weightInputField = FormFieldFactory.textInput(
         title: "Вес, кг",
         placeholder: "Рекорд",
         icon: Icons.weight
     )
     
-    private lazy var repsInputField = InputFieldFactory.makeInputField(
+    private lazy var repsInputField = FormFieldFactory.textInput(
         title: "Повторы",
-        placeholder: "Кол-во повторов",
+        placeholder: "Кол-во",
         icon: Icons.repeatIcon
     )
     
-    private lazy var calendarButton = ButtonFactory.pickerRow(
-        title: "Дата",
-        icon: Icons.calendar,
+    private lazy var calendarButton = FormFieldFactory.picker(
+        title: "Календарь",
+        valueTitle: "28.11",
         action: {
             print("calendarButton")
         }
@@ -50,7 +50,7 @@ final class ResultEntryViewController: UIViewController {
         selected: AttemptEffort.normal
     )
     
-    private lazy var commentInputField = InputFieldFactory.makeInputField(
+    private lazy var commentInputField = FormFieldFactory.textInput(
         title: "Комментарий",
         placeholder: "Ваши впечатления от попытки",
         icon: nil,
@@ -76,21 +76,21 @@ final class ResultEntryViewController: UIViewController {
 private extension ResultEntryViewController {
     func setupViews() {
         
-        commentInputField.uiTextField.delegate = self
+        commentInputField.textField.delegate = self
         
         view.backgroundColor = AppColor.background
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(exerciseSelectionButton)
         
         mainStackView.addArrangedSubview(exerciseDataStackView)
-        exerciseDataStackView.addArrangedSubview(weightInputField)
-        exerciseDataStackView.addArrangedSubview(repsInputField)
+        exerciseDataStackView.addArrangedSubview(weightInputField.view)
+        exerciseDataStackView.addArrangedSubview(repsInputField.view)
         
         mainStackView.addArrangedSubview(segmentsStackView)
         segmentsStackView.addArrangedSubview(attemptTypeSegments)
         segmentsStackView.addArrangedSubview(attemptEffortSegments)
         
-        mainStackView.addArrangedSubview(commentInputField)
+        mainStackView.addArrangedSubview(commentInputField.view)
         
         view.addSubview(actionButton)
     }
@@ -103,8 +103,6 @@ private extension ResultEntryViewController {
                 .constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
             mainStackView.trailingAnchor
                 .constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            
-            exerciseSelectionButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight),
             
             actionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
             actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
