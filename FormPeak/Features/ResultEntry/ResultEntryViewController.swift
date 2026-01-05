@@ -8,6 +8,7 @@ final class ResultEntryViewController: UIViewController {
     private lazy var exerciseSelectionButton = FormFieldFactory.picker(
         title: "Упражнение",
         valueTitle: "Становая тяга",
+        icon: Icons.barbell,
         chevron: true,
         action: {
             print("exerciseSelectionButton")
@@ -65,6 +66,16 @@ final class ResultEntryViewController: UIViewController {
         keyboardType: .default
     )
     
+    private lazy var mediaButton = FormFieldFactory.picker(
+        title: "Медиа",
+        valueTitle: "Добавить фото или видео",
+        icon: Icons.media,
+        chevron: false,
+        action: {
+            print("mediaButton")
+        }
+    )
+
     private lazy var actionButton = ButtonFactory.primary(
         title: "Сохранить рекорд",
         action: {
@@ -102,6 +113,8 @@ private extension ResultEntryViewController {
         segmentsStackView.addArrangedSubview(attemptEffortSegments)
         
         mainStackView.addArrangedSubview(commentInputField.view)
+        
+        mainStackView.addArrangedSubview(mediaButton)
         
         view.addSubview(actionButton)
     }

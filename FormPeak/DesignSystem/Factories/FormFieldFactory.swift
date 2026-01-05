@@ -34,7 +34,7 @@ enum FormFieldFactory {
     static func picker(
         title: String?,
         valueTitle: String,
-        icon: UIImage? = Icons.barbell,
+        icon: UIImage? = nil,
         backgroundColor: UIColor = AppColor.surface,
         textColor: UIColor = AppColor.textSecondary,
         chevron: Bool,
