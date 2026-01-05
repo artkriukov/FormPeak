@@ -3,7 +3,12 @@ import UIKit
 final class ResultEntryViewController: UIViewController {
     
     // MARK: - UI
-    private lazy var mainStackView = StackViewFactory.makeStackView()
+    
+    private let scrollView = ScrollingStackView(
+        axis: .vertical,
+        spacing: Layout.spaceM,
+        contentInsets: UIEdgeInsets(top: Layout.spaceM, left: 0, bottom: Layout.spaceM, right: 0)
+    )
     
     private lazy var exerciseSelectionButton = FormFieldFactory.picker(
         title: "Упражнение",
@@ -96,42 +101,32 @@ private extension ResultEntryViewController {
     func setupViews() {
         
         commentInputField.textField.delegate = self
-        
         view.backgroundColor = AppColor.background
-        view.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(exerciseSelectionButton)
         
-        mainStackView.addArrangedSubview(exerciseMainStackView)
+        view.addSubview(scrollView)
+        scrollView.stackView.addArrangedSubview(exerciseSelectionButton)
+        
+        scrollView.stackView.addArrangedSubview(exerciseMainStackView)
         exerciseMainStackView.addArrangedSubview(exerciseDataStackView)
         exerciseDataStackView.addArrangedSubview(weightInputField.view)
         exerciseDataStackView.addArrangedSubview(repsInputField.view)
-        
         exerciseMainStackView.addArrangedSubview(datePickerButton)
         
-        mainStackView.addArrangedSubview(segmentsStackView)
+        scrollView.stackView.addArrangedSubview(segmentsStackView)
         segmentsStackView.addArrangedSubview(attemptTypeSegments)
         segmentsStackView.addArrangedSubview(attemptEffortSegments)
         
-        mainStackView.addArrangedSubview(commentInputField.view)
-        
-        mainStackView.addArrangedSubview(mediaButton)
-        
-        view.addSubview(actionButton)
+        scrollView.stackView.addArrangedSubview(commentInputField.view)
+        scrollView.stackView.addArrangedSubview(mediaButton)
+        scrollView.stackView.addArrangedSubview(actionButton)
     }
     
     func setupConstraints() {        
         NSLayoutConstraint.activate([
-            
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Layout.spaceM),
-            mainStackView.leadingAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
-            mainStackView.trailingAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            
-            actionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
-            actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Layout.spaceM),
-            actionButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight)
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
