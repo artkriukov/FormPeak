@@ -12,6 +12,11 @@ final class ResultEntryViewController: UIViewController {
             print("exerciseSelectionButton")
         }
     )
+    
+    private lazy var exerciseMainStackView = StackViewFactory.makeStackView(
+        spacing: Layout.spaceS
+    )
+
     private lazy var exerciseDataStackView = StackViewFactory.makeStackView(
         axis: .horizontal,
         spacing: Layout.spaceS,
@@ -28,6 +33,15 @@ final class ResultEntryViewController: UIViewController {
         title: "Повторы",
         placeholder: "Кол-во",
         icon: Icons.repeatIcon
+    )
+    
+    private lazy var datePickerButton = FormFieldFactory.picker(
+        title: "Дата",
+        valueTitle: "22.11",
+        icon: Icons.calendar,
+        action: {
+            print("datePickerButton")
+        }
     )
     
     private lazy var calendarButton = FormFieldFactory.picker(
@@ -82,9 +96,12 @@ private extension ResultEntryViewController {
         view.addSubview(mainStackView)
         mainStackView.addArrangedSubview(exerciseSelectionButton)
         
-        mainStackView.addArrangedSubview(exerciseDataStackView)
+        mainStackView.addArrangedSubview(exerciseMainStackView)
+        exerciseMainStackView.addArrangedSubview(exerciseDataStackView)
         exerciseDataStackView.addArrangedSubview(weightInputField.view)
         exerciseDataStackView.addArrangedSubview(repsInputField.view)
+        
+        exerciseMainStackView.addArrangedSubview(datePickerButton)
         
         mainStackView.addArrangedSubview(segmentsStackView)
         segmentsStackView.addArrangedSubview(attemptTypeSegments)
