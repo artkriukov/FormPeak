@@ -34,8 +34,12 @@ final class PickerRow: UIControl {
         setupInfoStackView()
         setupTitle(with: config)
         setupIconView(with: config)
-        setupChevron()
-        setupViews()
+        
+        if config.chevron {
+            setupChevron()
+        }
+        
+        setupViews(with: config)
         
         addAction(UIAction { _ in
             config.action()
@@ -74,15 +78,18 @@ final class PickerRow: UIControl {
         chevron.contentMode = .scaleAspectFit
     }
     
-    private func setupViews() {
+    private func setupViews(with config: Configuration) {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(mainStackView)
         mainStackView.addArrangedSubview(infoStackView)
         infoStackView.addArrangedSubview(iconView)
         infoStackView.addArrangedSubview(title)
-        mainStackView.addArrangedSubview(chevron)
         
+        if config.chevron {
+            mainStackView.addArrangedSubview(chevron)
+        }
+
         NSLayoutConstraint.activate([
             iconView.widthAnchor.constraint(equalToConstant: 24),
             iconView.heightAnchor.constraint(equalToConstant: 24),
@@ -92,9 +99,14 @@ final class PickerRow: UIControl {
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.spaceM),
             mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: Layout.spaceS),
             mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.spaceS),
-            chevron.widthAnchor.constraint(equalToConstant: 18),
-            chevron.heightAnchor.constraint(equalToConstant: 18)
         ])
+        
+        if config.chevron {
+            NSLayoutConstraint.activate([
+                chevron.widthAnchor.constraint(equalToConstant: 18),
+                chevron.heightAnchor.constraint(equalToConstant: 18)
+            ])
+        }
         
         [mainStackView, infoStackView, iconView, title, chevron].forEach { $0.isUserInteractionEnabled = false }
     }
@@ -106,6 +118,7 @@ extension PickerRow {
         let icon: UIImage?
         let backgroundColor: UIColor
         let textColor: UIColor
+        let chevron: Bool
         let action: () -> Void
     }
 }

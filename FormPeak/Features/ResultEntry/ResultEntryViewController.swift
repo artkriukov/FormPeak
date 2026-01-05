@@ -8,6 +8,7 @@ final class ResultEntryViewController: UIViewController {
     private lazy var exerciseSelectionButton = FormFieldFactory.picker(
         title: "Упражнение",
         valueTitle: "Становая тяга",
+        chevron: true,
         action: {
             print("exerciseSelectionButton")
         }
@@ -39,16 +40,9 @@ final class ResultEntryViewController: UIViewController {
         title: "Дата",
         valueTitle: "22.11",
         icon: Icons.calendar,
+        chevron: false,
         action: {
             print("datePickerButton")
-        }
-    )
-    
-    private lazy var calendarButton = FormFieldFactory.picker(
-        title: "Календарь",
-        valueTitle: "28.11",
-        action: {
-            print("calendarButton")
         }
     )
     

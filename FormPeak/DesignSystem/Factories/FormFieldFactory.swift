@@ -37,6 +37,7 @@ enum FormFieldFactory {
         icon: UIImage? = Icons.barbell,
         backgroundColor: UIColor = AppColor.surface,
         textColor: UIColor = AppColor.textSecondary,
+        chevron: Bool,
         action: @escaping () -> Void
     ) -> FormField {
 
@@ -45,6 +46,7 @@ enum FormFieldFactory {
             icon: icon,
             backgroundColor: backgroundColor,
             textColor: textColor,
+            chevron: chevron,
             action: action
         ))
 
