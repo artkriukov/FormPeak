@@ -10,10 +10,16 @@ final class SegmentedButtonsView<Item: SegmentedItem>: UIView {
     private lazy var buttonsStackView = UIStackView()
     private var segmentedButtons: [UIButton] = []
     
-    private var selectedButton: Item
+    private(set) var selectedItem: Item {
+        didSet {
+            onSelect?(selectedItem)
+        }
+    }
+    
+    var onSelect: ((Item) -> Void)?
     
     init(with config: Configuration) {
-        self.selectedButton = config.selected
+        self.selectedItem = config.selected
         super.init(frame: .zero)
         setupSegmentedButtons(with: config)
     }
@@ -56,8 +62,7 @@ final class SegmentedButtonsView<Item: SegmentedItem>: UIView {
             
             button.addAction(UIAction { [weak self] _ in
                 guard let self else { return }
-                print(item)
-                self.selectedButton = item
+                self.selectedItem = item
                 switchButtonBackground()
             }, for: .touchUpInside)
             
@@ -71,8 +76,8 @@ final class SegmentedButtonsView<Item: SegmentedItem>: UIView {
     private func switchButtonBackground() {
         for (index, item) in Item.allCases.enumerated() {
             let button = segmentedButtons[index]
-            button.backgroundColor = ( item == selectedButton ) ? AppColor.primary : AppColor.surface
-            button.setTitleColor(( item == selectedButton ) ?
+            button.backgroundColor = ( item == selectedItem ) ? AppColor.primary : AppColor.surface
+            button.setTitleColor(( item == selectedItem ) ?
                                     AppColor.textOnPrimary :
                                     AppColor.textPrimary,
                                  for: .normal)

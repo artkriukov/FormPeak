@@ -80,10 +80,10 @@ final class ResultEntryViewController: UIViewController {
         }
     )
 
-    private lazy var actionButton = ButtonFactory.primary(
+    private lazy var saveButton = ButtonFactory.primary(
         title: "Сохранить рекорд",
-        action: {
-            print("actionButton")
+        action: { [weak self] in
+            self?.saveButtonTapped()
         })
     
     // MARK: - Life Circle
@@ -92,6 +92,21 @@ final class ResultEntryViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         setupViews()
         setupConstraints()
+    }
+    
+    private func saveButtonTapped() {
+        let date = Date()
+        let attemptType = attemptTypeSegments.selectedItem.title
+        let attemptEffort = attemptEffortSegments.selectedItem.title
+        
+        let exercise = exerciseSelectionButton.value
+        let weight = weightInputField.view.value
+        let resp = repsInputField.view.value
+        let comment = commentInputField.view.value
+        
+        print(
+            "exercise: \(exercise), weight: \(weight), resp: \(resp), comm: \(comment), date: \(date), attemptType: \(attemptType), attemptEffort: \(attemptEffort)"
+        )
     }
 }
 
@@ -117,20 +132,20 @@ private extension ResultEntryViewController {
         
         scrollView.stackView.addArrangedSubview(commentInputField.view)
         scrollView.stackView.addArrangedSubview(mediaButton)
-        view.addSubview(actionButton)
+        view.addSubview(saveButton)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            actionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
-            actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            actionButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight),
-            actionButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Layout.spaceM),
+            saveButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
+            saveButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
+            saveButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight),
+            saveButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Layout.spaceM),
             
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            scrollView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -Layout.spaceM)
+            scrollView.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -Layout.spaceM)
         ])
     }
 }

@@ -40,3 +40,14 @@ extension PrimaryButton {
         let action: () -> Void
     }
 }
+
+extension PrimaryButton: FormFieldValueView {
+    var formValue: String? {
+        get {
+            currentTitle
+        }
+        set {
+            setTitle(newValue, for: .normal)
+        }
+    }
+}

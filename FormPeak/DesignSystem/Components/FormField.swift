@@ -9,9 +9,17 @@ final class FormField: UIView {
 
     private lazy var stackView = UIStackView()
     private lazy var titleLabel = UILabel()
-
     private var contentView: UIView?
 
+    var value: String? {
+        get {
+            (contentView as? FormFieldValueView)?.formValue
+        }
+        set {
+            (contentView as? FormFieldValueView)?.formValue = newValue
+        }
+    }
+    
     init(with config: Configuration) {
         super.init(frame: .zero)
         setupFormField(with: config)

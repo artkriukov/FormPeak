@@ -16,6 +16,7 @@
 		5BCE1A332F04326200C659E6 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A322F04326200C659E6 /* Icons.swift */; };
 		5BCE1A672F0BE4B600C659E6 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A662F0BE4B600C659E6 /* FormField.swift */; };
 		5BCE1A9C2F0BF66500C659E6 /* ScrollingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1A9B2F0BF66500C659E6 /* ScrollingStackView.swift */; };
+		5BCE1AB32F0D37CD00C659E6 /* NewRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE1AB22F0D37CD00C659E6 /* NewRecord.swift */; };
 		65574F545CFD117EF051A07D /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCEE135EC64ABDF00E19243 /* RswiftLibrary */; };
 		7369F1011161BFD85339FD02 /* FormFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10716AA1A233A15F8324A38 /* FormFieldFactory.swift */; };
 		81283DCBD84BD5246E3F96E2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E98750131D221A411D53A /* InputField.swift */; };
@@ -42,6 +43,7 @@
 		5BCE1A322F04326200C659E6 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		5BCE1A662F0BE4B600C659E6 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		5BCE1A9B2F0BF66500C659E6 /* ScrollingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackView.swift; sourceTree = "<group>"; };
+		5BCE1AB22F0D37CD00C659E6 /* NewRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecord.swift; sourceTree = "<group>"; };
 		613F82490D797E05C4F6A5E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		624356556BFE845EE4A8C862 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		6B2E98750131D221A411D53A /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5BCE1A0F2F04110100C659E6 /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
 		5BCE1A3D2F0435CC00C659E6 /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
+		5BCE1AB62F0D3CCC00C659E6 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 			children = (
 				F6C18493BF246684A7BB0AED /* AttemptEffort.swift */,
 				073EF0B710F4282E690C0983 /* AttemptType.swift */,
+				5BCE1AB22F0D37CD00C659E6 /* NewRecord.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +159,7 @@
 		C9CF424BE66A73656138ABF6 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				5BCE1AB62F0D3CCC00C659E6 /* Models */,
 				426A5881BD346C85CDFB9D89 /* Components */,
 				349A13717BFCB3BA28935A26 /* Factories */,
 				46DC1D3F0EFD5160F07221FD /* Foundations */,
@@ -199,6 +204,7 @@
 			fileSystemSynchronizedGroups = (
 				5BCE1A0F2F04110100C659E6 /* Features */,
 				5BCE1A3D2F0435CC00C659E6 /* Common */,
+				5BCE1AB62F0D3CCC00C659E6 /* Models */,
 			);
 			name = FormPeak;
 			packageProductDependencies = (
@@ -284,6 +290,7 @@
 				D5484558A91702D5657986A0 /* AttemptEffort.swift in Sources */,
 				D66F615A11D7C69BB75D8DE2 /* AttemptType.swift in Sources */,
 				5BCE1A672F0BE4B600C659E6 /* FormField.swift in Sources */,
+				5BCE1AB32F0D37CD00C659E6 /* NewRecord.swift in Sources */,
 				F295C310E1592DA858432D51 /* ButtonFactory.swift in Sources */,
 				81283DCBD84BD5246E3F96E2 /* InputField.swift in Sources */,
 				7369F1011161BFD85339FD02 /* FormFieldFactory.swift in Sources */,

@@ -94,6 +94,17 @@ extension InputField {
     }
 }
 
+extension InputField: FormFieldValueView {
+    var formValue: String? {
+        get {
+            textField.text
+        }
+        set {
+            textField.text = newValue
+        }
+    }
+}
+
 private final class InsetTextField: UITextField {
     var insets = Layout.contentInset
     
