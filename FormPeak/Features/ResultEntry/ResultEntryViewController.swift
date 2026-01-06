@@ -3,7 +3,6 @@ import UIKit
 final class ResultEntryViewController: UIViewController {
     
     // MARK: - UI
-    
     private let scrollView = ScrollingStackView(
         axis: .vertical,
         spacing: Layout.spaceM,
@@ -118,15 +117,20 @@ private extension ResultEntryViewController {
         
         scrollView.stackView.addArrangedSubview(commentInputField.view)
         scrollView.stackView.addArrangedSubview(mediaButton)
-        scrollView.stackView.addArrangedSubview(actionButton)
+        view.addSubview(actionButton)
     }
     
-    func setupConstraints() {        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
+            actionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
+            actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
+            actionButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight),
+            actionButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -Layout.spaceM),
+            
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Layout.spaceM),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Layout.spaceM),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -Layout.spaceM)
         ])
     }
 }
